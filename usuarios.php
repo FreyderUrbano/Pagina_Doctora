@@ -17,20 +17,20 @@
     include 'conexion.php';
     $conn = conexion();
 
-    $nombre = $_POST['nombre'];
-    $email = $_POST['correo'];
-    $celular = $_POST['celular'];
+    $nombre = $_POST["nombre"];
+    $correo = $_POST["correo"];
+    $celular = $_POST["celular"];
 
-    $sql = "insert into usuarios values(default,'$nombre','$email','$celular')";
+    $sql = "insert into usuario values(default,'$nombre','$correo','$celular')";
     pg_query($conn, $sql);
     
     header('location:contact.html');
 
-    $to = "freurbano@gmail.com";
-    $subject = "Asunto del correo";
-    $message = "From: " . $_POST["name"] . " <" . $_POST["email"] . $_POST["celular"]. ">";
+    // $to = "freurbano@gmail.com";
+    // $subject = "Asunto del correo";
+    // $message = "From: " . $_POST["nombre"] . " <" . $_POST["correo"] . $_POST["celular"]. ">";
 
-    mail($to, $subject, $message);
+    // mail($to, $subject, $message);
     //FIN REGISTRO DATOS EMPLEADO 
 
     ?>
